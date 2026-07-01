@@ -58,13 +58,39 @@
   --radius-xl: 1rem;      /* 16px */
 }
 
+:root {
+  /* ===== Fon (Background) ===== */
+  --bg-primary: #1D2633;      /* Asosiy sahifa foni — eng ko'p ishlatiladigan rang */
+  --bg-surface: #2C384A;      /* Kartalar, modal, pill fonlar */
+  --bg-surface-alt: #263040;  /* Ikkilamchi panel, input fon, hover holat */
+  --bg-elevated: #324151;     /* Hover/active holatdagi elementlar, border */
+
+  /* ===== Brend ranglari ===== */
+  --brand-teal: #18D6C7;      /* Logotip, asosiy brend rangi, grafik chiziqlari */
+  --brand-mint: #44EB99;      /* Faol nav tab, asosiy CTA tugma, progress bar fill */
+
+  /* ===== Status/Aksent ranglar ===== */
+  --accent-blue: #008BFF;     /* Info, "ochiq" status, havolalar, CRP ball */
+  --accent-purple: #861BE3;   /* "Davom etmoqda" status, tag-badge */
+  --accent-purple-soft: #A24FEA; /* Coin pill, ikkilamchi binafsha */
+  --accent-amber: #F1A700;    /* Peer Review ball, ogohlantirish badge */
+  --accent-red: #FF5C5C;      /* YANGI — xato, bekor qilish, "absent" statusi uchun */
+
+  /* ===== Neytral ranglar ===== */
+  --neutral-pill: #DDE3E9;    /* Och kulrang pill */
+  --text-primary: #FFFFFF;
+  --text-secondary: #C6CFDA;
+  --text-muted: #8B95A5;
+  --border-color: #324151;
+}
+
 /* Base custom styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600;700&display=swap');
 
 body {
-  font-family: var(--font-ibm-plex-mono);
-  background: var(--color-bg);
-  color: var(--color-text);
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
 }
 

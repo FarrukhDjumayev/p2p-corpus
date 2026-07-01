@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
-import { Bell, Coins, Zap } from 'lucide-react';
+import { Bell, Coins, Zap, Settings } from 'lucide-react';
 import { Avatar } from '@/components/ui';
 
 interface HeaderProps {
@@ -12,7 +12,7 @@ export function Header({ unreadCount = 0 }: HeaderProps) {
 
   if (!user) {
     return (
-      <header className="h-18 lg:h-20 border-2 border-black rounded-2xl lg:rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] lg:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-[#2A3442] flex items-center justify-between px-4 sm:px-6 lg:px-8 sticky top-3 lg:top-6 z-20 mx-4 lg:mx-10 mt-3 lg:mt-6">
+      <header className="h-18 lg:h-20 border-[3px] border-black rounded-2xl lg:rounded-3xl shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] lg:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[#2A3442] flex items-center justify-between px-4 sm:px-6 lg:px-8 sticky top-3 lg:top-6 z-20 mx-4 lg:mx-10 mt-3 lg:mt-6">
         <div className="h-6 w-32 bg-[#34495E] animate-pulse rounded-lg border-2 border-black" />
         <div className="h-10 w-10 rounded-xl bg-[#34495E] animate-pulse border-2 border-black" />
       </header>
@@ -20,7 +20,7 @@ export function Header({ unreadCount = 0 }: HeaderProps) {
   }
 
   return (
-    <header className="h-18 lg:h-20 border-2 border-black rounded-2xl lg:rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] lg:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-[#2A3442]/95 backdrop-blur-md flex items-center justify-between px-3 sm:px-6 lg:px-8 sticky top-3 lg:top-6 z-20 mx-4 lg:mx-10 mt-3 lg:mt-6">
+    <header className="h-18 lg:h-20 border-[3px] border-black rounded-2xl lg:rounded-3xl shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] lg:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[#2A3442]/95 backdrop-blur-md flex items-center justify-between px-3 sm:px-6 lg:px-8 sticky top-3 lg:top-6 z-20 mx-4 lg:mx-10 mt-3 lg:mt-6">
       {/* Greetings block */}
       <div className="flex items-center gap-2 sm:gap-3">
         {/* Neon style P2P Badge for mobile */}
@@ -70,6 +70,15 @@ export function Header({ unreadCount = 0 }: HeaderProps) {
               {unreadCount}
             </span>
           )}
+        </Link>
+
+        {/* Settings button redirect on mobile */}
+        <Link
+          to="/settings"
+          className="relative p-1.5 sm:p-2 rounded-xl bg-[#34495E] hover:bg-gray-600 text-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all cursor-pointer lg:hidden"
+          aria-label="Sozlamalar"
+        >
+          <Settings className="h-4 w-4 sm:h-4.5 sm:w-4.5 text-[#B0BEC5]" />
         </Link>
 
         {/* User avatar directly linking to /profile */}

@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useWebSocket } from '@/hooks/useWebSocket';
 import { useDashboard } from '@/hooks/useDashboard';
-import { Sidebar, Header, BottomNav } from '.';
+import { Navbar, Header, BottomNav } from '.';
 import { DotField } from '@/components/ui';
 
 export function AppLayout() {
@@ -32,12 +32,15 @@ export function AppLayout() {
         />
       </div>
 
-      {/* Desktop sidebar */}
-      <Sidebar unreadCount={unreadCount} />
+      {/* Unified Desktop Top Navbar */}
+      <Navbar unreadCount={unreadCount} />
 
       {/* Content wrapper */}
-      <div className="lg:pl-[310px] flex flex-col flex-grow relative z-10">
-        <Header unreadCount={unreadCount} />
+      <div className="flex flex-col flex-grow relative z-10">
+        {/* Mobile only header */}
+        <div className="lg:hidden">
+          <Header unreadCount={unreadCount} />
+        </div>
 
         <main className="flex-grow p-4 sm:p-6 lg:px-10 lg:py-8 pb-28 lg:pb-8 max-w-[1440px] w-full mx-auto relative z-10">
           <Outlet />
